@@ -18,7 +18,9 @@ public class OrderService { // task 3
     public List<Product> findAllProductsByBuyerId (Long buyer_id) {
         try (Session session = factory.getSession()){
             session.beginTransaction();
-            List<Product> products = session.createQuery(String.format("SELECT o from Order WHERE o.buyer_id = %d", buyer_id)).getResultList();
+            List<Product> products = session.createQuery(String.format("SELECT o FROM Order o WHERE o.buyer_id = %d", buyer_id)).getResultList();
+            //Buyer b = session.get(Buyer.class, buyer_id);
+            //List<Product> products = session.createQuery(String.format("SELECT o from Order o WHERE o.buyer = %d", b)).getResultList();
             return products;
         }
     }

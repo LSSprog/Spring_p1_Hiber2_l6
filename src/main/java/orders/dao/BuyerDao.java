@@ -18,6 +18,7 @@ public class BuyerDao {
         try (Session session = factory.getSession()) {
             session.beginTransaction();
             List<Buyer> buyers = session.createQuery("FROM Buyer").getResultList();
+            buyers.size(); // проба
             return buyers;
         }
     }
@@ -26,6 +27,7 @@ public class BuyerDao {
         try (Session session = factory.getSession()){
             session.beginTransaction();
             Buyer buyer = session.get(Buyer.class, id);
+            session.getTransaction().commit();
             return buyer;
         }
     }

@@ -28,7 +28,7 @@ public class Order {
     @JoinColumn(name = "product_id")
     private Product product;
 
-    @Column(name = "price")
+    @Column(name = "price_fld")
     private int price;
 
     public Order(Buyer buyer, Product product,int price) {

@@ -14,7 +14,7 @@ public class Factory {
     @PostConstruct
     public void init() {
         factory = new Configuration()
-                .configure("config.hibernate.cfg.xml")
+                .configure("config/hibernate.cfg.xml")
                 .buildSessionFactory();
     }
 

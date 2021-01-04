@@ -24,6 +24,9 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
 ALTER TABLE `orders`.`order_tbl` 
+ADD COLUMN `price_fld` INT NULL AFTER `product_id`;
+
+ALTER TABLE `orders`.`order_tbl` 
 ADD INDEX `order_tbl_buyer_id_idx` (`buyer_id` ASC) VISIBLE,
 ADD INDEX `order_tbl_product_id_idx` (`product_id` ASC) VISIBLE;
 ;
@@ -55,3 +58,12 @@ INSERT INTO `orders`.`order_tbl` (`buyer_id`, `product_id`) VALUES ('2', '2');
 INSERT INTO `orders`.`order_tbl` (`buyer_id`, `product_id`) VALUES ('1', '2');
 INSERT INTO `orders`.`order_tbl` (`buyer_id`, `product_id`) VALUES ('3', '1');
 INSERT INTO `orders`.`order_tbl` (`buyer_id`, `product_id`) VALUES ('2', '4');
+
+UPDATE `orders`.`order_tbl` SET `price_fld` = '300' WHERE (`order_id` = '1');
+UPDATE `orders`.`order_tbl` SET `price_fld` = '300' WHERE (`order_id` = '4');
+UPDATE `orders`.`order_tbl` SET `price_fld` = '300' WHERE (`order_id` = '5');
+UPDATE `orders`.`order_tbl` SET `price_fld` = '200' WHERE (`order_id` = '6');
+UPDATE `orders`.`order_tbl` SET `price_fld` = '50' WHERE (`order_id` = '2');
+UPDATE `orders`.`order_tbl` SET `price_fld` = '50' WHERE (`order_id` = '3');
+UPDATE `orders`.`order_tbl` SET `price_fld` = '120' WHERE (`order_id` = '7');
+
