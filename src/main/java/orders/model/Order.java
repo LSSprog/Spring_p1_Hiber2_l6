@@ -37,7 +37,17 @@ public class Order {
         this.price = price;
     }
 
-    /*public Order(Long buyer_id, Long product_id) {
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", buyer=" + buyer +
+                ", product=" + product.getTitle() +
+                ", price=" + price +
+                '}';
+    }
+
+/*public Order(Long buyer_id, Long product_id) {
         this.buyer_id = buyer_id;
         this.product_id = product_id;
     }*/

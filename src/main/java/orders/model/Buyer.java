@@ -27,8 +27,15 @@ public class Buyer {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Buyer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 
-    /*@NamedQueries({
+/*@NamedQueries({
             @NamedQuery(name = "withStudents", query = "SELECT u FROM University u JOIN FETCH u.students WHERE u.id = :id")
     })
     University universityFetch = (University)session.getNamedQuery("withStudents")
