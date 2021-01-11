@@ -16,14 +16,10 @@ public class Order {
     @Column(name = "order_id")
     private Long id;
 
-    /*@Column(name = "buyer_id")
-    private Long buyer_id;*/
     @ManyToOne
     @JoinColumn(name = "buyer_id")
     private Buyer buyer;
 
-    /*@Column(name = "product_id")
-    private Long product_id;*/
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;

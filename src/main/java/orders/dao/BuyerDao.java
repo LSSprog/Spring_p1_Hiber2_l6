@@ -27,6 +27,7 @@ public class BuyerDao {
         try (Session session = factory.getSession()){
             session.beginTransaction();
             Buyer buyer = session.get(Buyer.class, id);
+            buyer.getOrders().size();
             session.getTransaction().commit();
             return buyer;
         }

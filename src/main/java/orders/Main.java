@@ -29,9 +29,12 @@ public class Main {
         //buyer1.getOrders().get(1);
         System.out.println(buyerList);
 
-        OrderService orders = new OrderService(factory);
-        List<Product> products = orders.findAllProductsByBuyerId(2L);
-        System.out.println(products);
+        List<Order> orders = buyer1.getOrders();
+        System.out.println(orders);
+
+//        OrderService orders = new OrderService(factory);
+//        List<Product> products = orders.findAllProductsByBuyerId(2L);
+//        System.out.println(products);
 
         /*Session session = factory.getSession();
         session.beginTransaction();

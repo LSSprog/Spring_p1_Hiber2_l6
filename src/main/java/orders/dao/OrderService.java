@@ -12,7 +12,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class OrderService { // task 3
+public class OrderService { // task 3 !!!!Получается этот сервис вообще не нужен!!!! без него можно через getOrders  и всё
     private final Factory factory;
 
     public List<Product> findAllProductsByBuyerId (Long buyer_id) {
